@@ -1,9 +1,6 @@
 import React from "react";
 import Head from "next/Head";
 import styled from "styled-components";
-import GlobalStyles from "./globalStyles";
-import ThemeProvider from "./themeProvider";
-import StateProvider from "./stateProvider";
 
 import Navigation from "../components/navigation";
 
@@ -17,13 +14,9 @@ export default function Layout({ children }) {
                     rel="stylesheet"
                 />
             </Head>
-            <StateProvider>
-                <ThemeProvider>
-                    <GlobalStyles />
-                    <Navigation />
-                    {children}
-                </ThemeProvider>
-            </StateProvider>
+
+            <Navigation />
+            {children}
         </Container>
     );
 }
